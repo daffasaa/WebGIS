@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KarHutLa Indonesia | Web GIS Kebakaran Hutan dan Lahan</title>
+<meta name="description" content="Web GIS interaktif untuk memantau kebakaran hutan dan lahan di Indonesia, dibangun dengan Google Earth Engine.">
+<style>
+  :root {
+    --ash: #e9ece8;
+    --peat: #2b2a26;
+    --forest: #25483a;
+    --flame: #c8410b;
+    --mist: #b8c2ba;
+    --paper: #f7f8f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ash: #1d211e;
+      --peat: #e6e8e3;
+      --forest: #8fc3ab;
+      --flame: #f08a56;
+      --mist: #3a423d;
+      --paper: #262b28;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ash);
+    color: var(--peat);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--forest); }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--flame); outline-offset: 2px; }
+
+  header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 20px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .lead { margin: 6px 0 0; max-width: 62ch; color: var(--peat); opacity: .8; }
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--flame);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+  @media (prefers-color-scheme: dark) { .btn { color: #1d211e; } }
+
+  .map-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .map-frame {
+    border: 1px solid var(--mist);
+    background: var(--paper);
+  }
+  iframe {
+    display: block;
+    width: 100%;
+    height: min(78vh, 760px);
+    min-height: 420px;
+    border: 0;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 36px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+  }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; }
+  ul { margin: 0; padding-left: 1.1em; }
+  li { margin-bottom: 4px; }
+
+  footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+    border-top: 1px solid var(--mist);
+    font-size: .92rem;
+    opacity: .85;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>KarHutLa Indonesia</h1>
+    <p class="lead">Web GIS interaktif untuk memantau dan menganalisis kebakaran hutan dan lahan di Indonesia, dibangun dengan Google Earth Engine.</p>
+  </div>
+  <a class="btn" href="https://ee-daffasatria.projects.earthengine.app/view/karhutla-indonesia" target="_blank" rel="noopener">Buka layar penuh</a>
+</header>
+
+<div class="map-wrap">
+  <div class="map-frame">
+    <iframe
+      src="https://ee-daffasatria.projects.earthengine.app/view/karhutla-indonesia"
+      title="Peta interaktif KarHutLa Indonesia"
+      loading="lazy"
+      allowfullscreen></iframe>
+  </div>
+</div>
+
+<main>
+  <section>
+    <h2>Tentang aplikasi</h2>
+    <p>Aplikasi ini menampilkan sebaran kejadian karhutla di Indonesia pada peta interaktif, sehingga pola dan lokasinya bisa dilihat tanpa perangkat lunak GIS.</p>
+  </section>
+
+  <section>
+    <h2>Fitur</h2>
+    <ul>
+      <!-- EDIT: sesuaikan dengan fitur yang benar-benar ada di app -->
+      <li>Peta interaktif berbasis web</li>
+      <li>Pemilihan wilayah dan periode</li>
+      <li>Statistik ringkas hasil analisis</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data dan metode</h2>
+    <ul>
+      <!-- EDIT: isi dengan dataset dan metode yang dipakai -->
+      <li>Sumber data: (isi nama dataset, mis. hotspot/area terbakar)</li>
+      <li>Periode data: (isi)</li>
+      <li>Pengolahan: Google Earth Engine (JavaScript API)</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  Dibuat oleh Daffa Satria Nugraha, lulusan Marine Science, Universitas Brawijaya.
+  <!-- EDIT: tambahkan link LinkedIn / email / kode sumber -->
+</footer>
+
+</body>
+</html>
